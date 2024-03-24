@@ -6,9 +6,9 @@ const router= Router();
 const studentList=[
     {"id":"1","name":"Alex Malisa","school":"UDSM","course":"ME"},
     {"id":"2","name":"Frank Malisa","school":"UDSM","course":"CIT"},
-    {"id":"3","name":"Stephen Kikoti","school":"DUCE","course":"BAED"}
+    {"id":"3","name":"Stephen Kikoti","school":"DUCE","course":"COSS"}
 ]
-router.get('/users',(req,res)=>{
+router.get('/',(req,res)=>{
 
     if(true)
         res.send(studentList);
@@ -25,13 +25,13 @@ router.get('/users',(req,res)=>{
     
 });
 
-router.post('/users',(req,res)=>{
+router.post('/',(req,res)=>{
     console.log(req.body);
     studentList.push(req.body);
     res.sendStatus(201);
 });
 
-router.get('/users/:identity',(req,res)=>{
+router.get('/:identity',(req,res)=>{
     const {identity}= req.params;
 
     const match=studentList.find((student) => student.id===identity);
